@@ -2,7 +2,7 @@
 <div style="flex:1"><h3>📝 一般形式</h3><div class="cb"><pre>while (表达式)
 {
     语句序列;  // 循环体
-}</pre></div><h3>📌 执行特点</h3><ul style="font-size:17px;line-height:1.8;margin-left:20px"><li><span class="hl">先判断，后执行</span></li><li>表达式为真(非0) → 执行循环体</li><li>表达式为假(0) → 结束循环</li><li>循环体可能执行0次或多次</li></ul></div><div style="flex:1"><h3>🔄 执行流程</h3><div style="text-align:center;font-size:18px;line-height:2"><div style="background:white;border:2px solid #16537e;border-radius:8px;padding:10px;margin:5px auto;width:200px">开始</div>↓<div style="background:#fff3cd;border:2px solid #ffc107;border-radius:8px;padding:10px;margin:5px auto;width:200px">表达式? (判断)</div>↓ 真(非0)<div style="background:white;border:2px solid #16537e;border-radius:8px;padding:10px;margin:5px auto;width:200px">语句序列 (循环体)</div>↑ 回到判断</div></div></div></div><div class="slide cs"><h2>📖 例4-1：求 1+2+3+4+5 的和</h2><div style="display:flex;gap:25px;width:100%">
+}</pre></div><h3>📌 执行特点</h3><ul style="font-size:17px;line-height:1.8;margin-left:20px"><li><span class="hl">先判断，后执行</span></li><li>表达式为真(非0) → 执行循环体</li><li>表达式为假(0) → 结束循环</li><li>循环体可能执行0次或多次</li></ul></div><div style="flex:1"><h3>🔄 执行流程</h3><div style="text-align:center;font-size:17px;line-height:2"><div style="background:white;border:2px solid #16537e;border-radius:8px;padding:8px;margin:4px auto;width:180px">开始</div>↓<div style="background:#fff3cd;border:2px solid #ffc107;border-radius:8px;padding:8px;margin:4px auto;width:180px">表达式? (判断)</div>↓ 真(非0)<div style="background:white;border:2px solid #16537e;border-radius:8px;padding:8px;margin:4px auto;width:180px">语句序列 (循环体)</div>↑ 回到判断</div></div></div></div><div class="slide cs"><h2>📖 例4-1：求 1+2+3+4+5 的和</h2><div style="display:flex;gap:25px;width:100%">
 <div style="flex:1"><h3>💻 程序代码</h3><div class="cb"><pre>#include &lt;stdio.h&gt;
 main()
 {
@@ -27,4 +27,130 @@ while(i &lt;= 5)
 }</pre></div></div></div><div class="slide cs"><h2>✏️ while循环 —— 春考选择题（题目）</h2><div class="qq"><div class="qt">【第1题】while循环中的循环体（  ）</div><div class="op"><span>A. 至少执行一次</span><span>B. 可能执行0次</span><span>C. 固定执行n次</span><span>D. 最多执行一次</span></div></div><div class="qq"><div class="qt">【第2题】以下程序运行结果是（  ）</div><div class="cb" style="margin:6px 0;font-size:15px"><pre>int i=1, s=0;
 while(i &lt;= 3)
 { s += i; i++; }
-printf("%d", s);</pre></div><div class="op"><span>A. 3</span><span>B. 6</span><span>C. 死循环</span><span>D. 0</span></div></div><div class="qq"><div class="qt">【第3题】while(i!=0)循环结束的条件是（  ）</div><div class="op"><span>A. i等于0</span><span>B. i不等于0</span><span>C. i大于0</span><span>D. i小于0</span></div></div></div><div class="slide as"><h2 style="font-size:34px;color:#0f3460;margin-bottom:25px;width:100%;padding-bottom:12px;border-bottom:4px solid #2e7d32">✅ while循环 —— 选择题答案</h2><div class="ai"><strong>第1题：</strong><span class="c">B. 可能执行0次</span><br><span style="font-size:15px;color:#666">解析：while是先判断后执行，如果第一次条件就为假，循环体一次都不执行。</span></div><div class="ai"><strong>第2题：</strong><span class="c">B. 6</span><br><span style="font-size:15px;color:#666">解析：1+2+3=6。i=1时s=1，i=2时s=3，i=3时s=6，i=4时条件为假退出。</span></div><div class="ai"><strong>第3题：</strong><span class="c">A. i等于0</span><br><span style="font-size:15px;color:#666">解析：while(i!=0)表示i不等于0时继续循环，所以i=0时条件为假，循环结束。</span></div></div><div class="slide cs"><h2>💻 while循环 —— 编程练习题</h2><div class="pb"><div class="pt">【程序题1】求 1+3+5+...+99 的奇数和</div><div class="pd">要求：使用while循环，计算1到100之间所有奇数的和。<br><span style="color:#666;font-size:15px">提示：循环变量i从1开始，每次加2。累加器sum初始为0。</span></div></div><div class="pb"><div class="pt">【程序题2】统计输入字符的个数</div><div class="pd">要求：从键盘输入一串字符，直到输入换行符为止，统计一共输入了多少个字符。<br><span style="color:#666;font-size:15px">提示：char c; while((c=getchar())!='\n') count++;</span></div></div><div class="pb"><div class="pt">【程序题3】求n的阶乘 n!</div><div class="pd">要求：输入一个正整数n，计算 n! = 1×2×3×...×n。<br><span style="color:#666;font-size:15px">提示：累乘器初始值为1（不是0！），注意数据类型用long。</span></div></div></div><div class="slide cover"><h1>未完待续</h1><div class="sub">第4章 循环程序设计</div><div class="info"><p>更多内容正在加载中...</p></div></div><div class="nc"><button class="nb" onclick="prevSlide()">← 上一页</button><button class="nb" onclick="nextSlide()">下一页 →</button></div><div class="pi" id="pi">1 / 12</div><script>let cur=0;const sl=document.querySelectorAll('.slide');const tot=sl.length;function show(n){sl.forEach(s=>s.classList.remove('active'));sl[n].classList.add('active');document.getElementById('pi').textContent=(n+1)+' / '+tot}function next(){if(cur<tot-1){cur++;show(cur)}}function prev(){if(cur>0){cur--;show(cur)}}document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();next()}else if(e.key==='ArrowLeft'){e.preventDefault();prev()}})</script></body></html>
+printf("%d", s);</pre></div><div class="op"><span>A. 3</span><span>B. 6</span><span>C. 死循环</span><span>D. 0</span></div></div><div class="qq"><div class="qt">【第3题】while(i!=0)循环结束的条件是（  ）</div><div class="op"><span>A. i等于0</span><span>B. i不等于0</span><span>C. i大于0</span><span>D. i小于0</span></div></div></div><div class="slide as"><h2 style="font-size:34px;color:#0f3460;margin-bottom:25px;width:100%;padding-bottom:12px;border-bottom:4px solid #2e7d32">✅ while循环 —— 选择题答案</h2><div class="ai"><strong>第1题：</strong><span class="c">B. 可能执行0次</span><br><span style="font-size:15px;color:#666">解析：while是先判断后执行，如果第一次条件就为假，循环体一次都不执行。</span></div><div class="ai"><strong>第2题：</strong><span class="c">B. 6</span><br><span style="font-size:15px;color:#666">解析：1+2+3=6。i=1时s=1，i=2时s=3，i=3时s=6，i=4时条件为假退出。</span></div><div class="ai"><strong>第3题：</strong><span class="c">A. i等于0</span><br><span style="font-size:15px;color:#666">解析：while(i!=0)表示i不等于0时继续循环，所以i=0时条件为假，循环结束。</span></div></div><div class="slide cs"><h2>💻 while循环 —— 编程练习题</h2><div class="pb"><div class="pt">【程序题1】求 1+3+5+...+99 的奇数和</div><div class="pd">要求：使用while循环，计算1到100之间所有奇数的和。<br><span style="color:#666;font-size:15px">提示：循环变量i从1开始，每次加2。累加器sum初始为0。</span></div></div><div class="pb"><div class="pt">【程序题2】统计输入字符的个数</div><div class="pd">要求：从键盘输入一串字符，直到输入换行符为止，统计一共输入了多少个字符。<br><span style="color:#666;font-size:15px">提示：char c; while((c=getchar())!='\n') count++;</span></div></div><div class="pb"><div class="pt">【程序题3】求n的阶乘 n!</div><div class="pd">要求：输入一个正整数n，计算 n! = 1×2×3×...×n。<br><span style="color:#666;font-size:15px">提示：累乘器初始值为1（不是0！），注意数据类型用long。</span></div></div></div><div class="slide cs"><h2>4.2 do...while 循环 —— 直到型循环</h2><div style="display:flex;gap:25px;width:100%">
+<div style="flex:1"><h3>📝 一般形式</h3><div class="cb"><pre>do
+{
+    语句序列;  // 循环体
+}while(表达式);  // ← 分号不能漏！</pre></div><h3>📌 执行特点</h3><ul style="font-size:17px;line-height:1.8;margin-left:20px"><li><span class="hl">先执行，后判断</span></li><li>先执行一次循环体，再判断条件</li><li>条件为真 → 继续下一轮循环</li><li class="d">循环体至少执行一次！</li></ul></div><div style="flex:1"><h3>🔄 执行流程</h3><div style="text-align:center;font-size:17px;line-height:2"><div style="background:white;border:2px solid #16537e;border-radius:8px;padding:8px;margin:4px auto;width:180px">开始</div>↓<div style="background:#e8f5e9;border:2px solid #2e7d32;border-radius:8px;padding:8px;margin:4px auto;width:180px">语句序列 ← 先执行！</div>↓<div style="background:#fff3cd;border:2px solid #ffc107;border-radius:8px;padding:8px;margin:4px auto;width:180px">表达式? (判断)</div>↑ 真(非0)  假(0)→结束</div></div></div></div><div class="slide cs"><h2>📖 例4-3：逆序输出一个整数</h2><div style="display:flex;gap:25px;width:100%">
+<div style="flex:1"><h3>💻 程序代码</h3><div class="cb"><pre>main()
+{
+    long num;
+    int b;
+    printf("输入一个整数：");
+    scanf("%ld", &num);
+    do
+    {
+        b = num % 10;   // 取个位数
+        printf("%d", b);
+        num = num / 10; // 去掉个位数
+    } while(num);      // num非0继续
+}</pre></div></div><div style="flex:1"><h3>🔍 执行过程（输入54321）</h3><table class="ct"><tr><th>轮次</th><th>b(输出)</th><th>num(剩余)</th><th>num为0?</th></tr><tr><td>初始</td><td>—</td><td>54321</td><td>否</td></tr><tr><td>第1轮</td><td>1</td><td>5432</td><td>否</td></tr><tr><td>第2轮</td><td>2</td><td>543</td><td>否</td></tr><tr><td>第3轮</td><td>3</td><td>54</td><td>否</td></tr><tr><td>第4轮</td><td>4</td><td>5</td><td>否</td></tr><tr><td>第5轮</td><td>5</td><td>0</td><td class="s">是→结束</td></tr></table><p style="font-size:18px">输出结果：<span class="s">12345</span></p></div></div></div><div class="slide cs"><h2>⚠️ do...while循环 —— 易错点</h2><div class="wb"><div class="t">🚨 错误1：while后面丢了分号</div><div class="cb" style="margin:8px 0;font-size:15px"><pre>do
+{
+    sum = sum + i;
+    i++;
+} while(i &lt;= 5)  // ← 少了分号！编译错误
+// ✅ 正确：} while(i &lt;= 5);</pre></div></div><div class="wb"><div class="t">🚨 错误2：忘记至少执行一次</div><p style="font-size:16px;line-height:1.7">do...while不管条件是否成立，<strong>至少先执行一次循环体</strong>。如果num一开始就是0，do...while会先输出一个0。</p></div><div class="wb"><div class="t">🚨 错误3：花括号省略问题</div><p style="font-size:16px">即使循环体只有一条语句，do...while的花括号也建议写上，避免语法混乱。</p></div></div><div class="slide cs"><h2>⚖️ while 与 do...while 对比</h2><table class="ct"><tr><th style="width:20%">对比项</th><th style="width:40%">while循环</th><th style="width:40%">do...while循环</th></tr><tr><td><strong>执行顺序</strong></td><td>先判断条件，后执行循环体</td><td>先执行循环体，后判断条件</td></tr><tr><td><strong>执行次数</strong></td><td>0次或多次</td><td class="d">至少1次</td></tr><tr><td><strong>相同点</strong></td><td colspan="2">第一次条件就为真时，两种循环结果相同</td></tr><tr><td><strong>不同点</strong></td><td colspan="2">第一次条件为假时，while一次不执行，do...while执行一次</td></tr></table><div style="display:flex;gap:15px;margin-top:15px"><div style="flex:1;padding:12px;background:#e3f2fd;border-radius:8px;font-size:16px"><strong>while版：</strong>条件为假 → 一次不执行</div><div style="flex:1;padding:12px;background:#fff3e0;border-radius:8px;font-size:16px"><strong>do...while版：</strong>条件为假 → 已执行一次</div></div></div><div class="slide cs"><h2>✏️ do...while循环 —— 春考选择题（题目）</h2><div class="qq"><div class="qt">【第1题】do...while循环中，循环体的执行情况是（  ）</div><div class="op"><span>A. 至少执行一次</span><span>B. 可能执行0次</span><span>C. 固定执行两次</span><span>D. 最多执行一次</span></div></div><div class="qq"><div class="qt">【第2题】以下程序运行结果是（  ）</div><div class="cb" style="margin:6px 0;font-size:15px"><pre>int i=5, s=0;
+do
+{ s += i; i--; }
+while(i &gt; 0);
+printf("%d", s);</pre></div><div class="op"><span>A. 10</span><span>B. 15</span><span>C. 死循环</span><span>D. 0</span></div></div><div class="qq"><div class="qt">【第3题】do...while语句结束时，while后面（  ）</div><div class="op"><span>A. 不能有分号</span><span>B. 必须有分号</span><span>C. 可有可无</span><span>D. 必须有逗号</span></div></div></div><div class="slide as"><h2 style="font-size:34px;color:#0f3460;margin-bottom:25px;width:100%;padding-bottom:12px;border-bottom:4px solid #2e7d32">✅ do...while循环 —— 选择题答案</h2><div class="ai"><strong>第1题：</strong><span class="c">A. 至少执行一次</span><br><span style="font-size:15px;color:#666">解析：do...while是先执行后判断，不管条件真假，循环体至少执行一次。这是它和while最大的区别。</span></div><div class="ai"><strong>第2题：</strong><span class="c">B. 15</span><br><span style="font-size:15px;color:#666">解析：5+4+3+2+1=15。i从5开始，每次减1，直到i=0时条件i&gt;0为假退出。</span></div><div class="ai"><strong>第3题：</strong><span class="c">B. 必须有分号</span><br><span style="font-size:15px;color:#666">解析：do...while是一条完整语句，while(表达式)后面必须加分号，否则编译报错。考试常考点！</span></div></div><div class="slide cs"><h2>4.3 for 循环 —— 最灵活的循环</h2><div style="display:flex;gap:25px;width:100%">
+<div style="flex:1"><h3>📝 一般形式</h3><div class="cb"><pre>for (表达式1; 表达式2; 表达式3)
+{
+    语句序列;
+}
+// 表达式1 → 初始化（只执行1次）
+// 表达式2 → 循环条件（每次判断）
+// 表达式3 → 循环变量更新（每次执行完后）</pre></div></div><div style="flex:1"><h3>🔄 执行流程</h3><div style="text-align:center;font-size:16px;line-height:1.9"><div style="background:white;border:2px solid #16537e;border-radius:6px;padding:6px;margin:3px auto;width:220px">① 计算表达式1（初始化）</div>↓<div style="background:#fff3cd;border:2px solid #ffc107;border-radius:6px;padding:6px;margin:3px auto;width:220px">② 计算表达式2（条件判断）</div>↓ 真<div style="background:white;border:2px solid #16537e;border-radius:6px;padding:6px;margin:3px auto;width:220px">③ 执行循环体语句</div>↓<div style="background:white;border:2px solid #16537e;border-radius:6px;padding:6px;margin:3px auto;width:220px">④ 计算表达式3（更新变量）</div>↑ 回到②</div></div></div></div><div class="slide cs"><h2>📖 例4-4：输入10个整数，求其和</h2><div style="display:flex;gap:25px;width:100%">
+<div style="flex:1"><h3>💻 程序代码</h3><div class="cb"><pre>#include &lt;stdio.h&gt;
+main()
+{
+    int i, num, sum;
+    sum = 0;
+    for(i=1; i&lt;=10; i++)
+    {
+        scanf("%d", &num);
+        sum = sum + num;
+    }
+    printf("和为：%d", sum);
+}</pre></div><div style="padding:10px;background:#e8f5e9;border-radius:8px;margin-top:8px;font-size:15px"><strong>💡 for vs while：</strong>for把初始化、条件、更新写在一行，更紧凑。循环次数明确时优先用for。</div></div><div style="flex:1"><h3>🔍 for循环三要素对应</h3><div style="background:white;padding:18px;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.1);font-size:17px;line-height:2.2"><div><span style="background:#ffcdd2;padding:2px 8px;border-radius:4px;font-family:monospace">i=1</span> → 初始化（表达式1）</div><div><span style="background:#fff9c4;padding:2px 8px;border-radius:4px;font-family:monospace">i&lt;=10</span> → 循环条件（表达式2）</div><div><span style="background:#c8e6c9;padding:2px 8px;border-radius:4px;font-family:monospace">i++</span> → 变量更新（表达式3）</div></div><div style="margin-top:12px;padding:12px;background:#e3f2fd;border-radius:8px;font-size:15px"><strong>退出循环时：</strong>i = 11<br>（i=10时执行循环体，然后i++变成11，再判断为假退出）</div></div></div></div><div class="slide cs"><h2>⚠️ for循环 —— 易错点总结</h2><div class="wb"><div class="t">🚨 错误1：误把"小于等于"写成"小于"</div><div class="cb" style="margin:8px 0;font-size:15px"><pre>for(i=1; i&lt;10; i++)  // ← 应该是 i&lt;=10！
+    sum += i;
+// 结果只加到9，少了最后一个数！</pre></div></div><div class="wb"><div class="t">🚨 错误2：for后面多加了分号</div><div class="cb" style="margin:8px 0;font-size:15px"><pre>for(i=1; i&lt;=5; i++);  // ← 分号！循环体是空语句
+{
+    printf("%d", i);  // 这行不在循环里！
+}</pre></div></div><div class="wb"><div class="t">🚨 错误3：三个表达式都可省略，但分号不能省</div><p style="font-size:16px">for的三个表达式都可以省略，但两个分号必须保留。省略表达式2相当于条件永远为真（死循环）。</p></div></div><div class="slide cs"><h2>✏️ for循环 —— 春考选择题（题目）</h2><div class="qq"><div class="qt">【第1题】for(i=0; i&lt;10; i++)循环执行的次数是（  ）</div><div class="op"><span>A. 9次</span><span>B. 10次</span><span>C. 11次</span><span>D. 无限次</span></div></div><div class="qq"><div class="qt">【第2题】以下循环结束后，i的值是（  ）</div><div class="cb" style="margin:6px 0;font-size:15px"><pre>int i;
+for(i=1; i&lt;=5; i++);
+printf("%d", i);</pre></div><div class="op"><span>A. 5</span><span>B. 6</span><span>C. 1</span><span>D. 死循环</span></div></div><div class="qq"><div class="qt">【第3题】for循环中，能省略的是（  ）</div><div class="op"><span>A. 只能省略表达式1</span><span>B. 只能省略表达式2</span><span>C. 三个表达式都可省略，但分号不能省</span><span>D. 三个表达式都不能省略</span></div></div></div><div class="slide as"><h2 style="font-size:34px;color:#0f3460;margin-bottom:25px;width:100%;padding-bottom:12px;border-bottom:4px solid #2e7d32">✅ for循环 —— 选择题答案</h2><div class="ai"><strong>第1题：</strong><span class="c">B. 10次</span><br><span style="font-size:15px;color:#666">解析：i从0到9，共10个值，执行10次。当i=10时条件i&lt;10为假退出。</span></div><div class="ai"><strong>第2题：</strong><span class="c">B. 6</span><br><span style="font-size:15px;color:#666">解析：注意for后面有分号！循环体是空语句。i=1,2,3,4,5都执行了空循环体，然后i++变成6，此时i&lt;=5为假退出。</span></div><div class="ai"><strong>第3题：</strong><span class="c">C. 三个表达式都可省略，但分号不能省</span><br><span style="font-size:15px;color:#666">解析：for的三个表达式都可以省略，但两个分号必须保留。省略表达式2相当于条件永远为真。</span></div></div><div class="slide cs"><h2>💻 for循环 —— 编程练习题</h2><div class="pb"><div class="pt">【程序题1】求1~100的偶数和</div><div class="pd">要求：使用for循环计算1到100之间所有偶数的和。<br><span style="color:#666;font-size:15px">提示：for(i=2; i&lt;=100; i+=2)</span></div></div><div class="pb"><div class="pt">【程序题2】计算1+1/2+1/3+...+1/20的和</div><div class="pd">要求：计算累加和，结果保留两位小数。<br><span style="color:#666;font-size:15px">提示：注意用1.0/i而不是1/i（整数除法陷阱！）</span></div></div><div class="pb"><div class="pt">【程序题3】输入n，输出n行星号三角形</div><div class="pd">要求：输入3，输出：*、**、***<br><span style="color:#666;font-size:15px">提示：外层控制行数，内层控制每行星号数</span></div></div></div><div class="slide cs"><h2>📊 三种循环语句对比总结</h2><table class="ct"><tr><th style="width:18%">对比项</th><th style="width:27%">while</th><th style="width:27%">do...while</th><th style="width:28%">for</th></tr><tr><td><strong>别名</strong></td><td>当型循环</td><td>直到型循环</td><td>计数型循环</td></tr><tr><td><strong>执行顺序</strong></td><td>先判断后执行</td><td class="d">先执行后判断</td><td>先判断后执行</td></tr><tr><td><strong>执行次数</strong></td><td>0次或多次</td><td class="d">至少1次</td><td>0次或多次</td></tr><tr><td><strong>适用场景</strong></td><td>循环次数不确定</td><td>至少执行一次</td><td class="s">循环次数确定</td></tr><tr><td><strong>三要素位置</strong></td><td>分散在各处</td><td>分散在各处</td><td class="s">集中在for括号里</td></tr></table><div style="margin-top:12px;padding:12px;background:#e8f5e9;border-radius:8px;font-size:16px;width:100%"><strong>💡 春考技巧：</strong>看到"至少执行一次"→ do...while；看到"循环次数明确"→ for；看到"输入直到XX为止"→ while/do-while</div></div><div class="slide cs"><h2>4.4 多重循环（循环嵌套）</h2><div style="display:flex;gap:25px;width:100%">
+<div style="flex:1"><h3>📌 什么是循环嵌套？</h3><p style="font-size:17px;line-height:1.8">一个循环的循环体中又包含另一个完整的循环结构，称为<strong>循环嵌套</strong>。<br><br>三种循环（while、do...while、for）<strong>可以相互嵌套</strong>，自由组合。</p><div style="padding:12px;background:#fff3e0;border-radius:8px;margin-top:12px;font-size:15px"><strong>🔑 执行规律：</strong><br>外层循环执行1次 → 内层循环完整执行n次<br>外层走一圈，内层跑一圈！</div></div><div style="flex:1"><h3>🔄 嵌套执行示意图</h3><div class="cb" style="font-size:15px"><pre>for(i=1; i&lt;=3; i++)  // 外层：3次
+{
+    for(j=1; j&lt;=2; j++) // 内层：2次
+    {
+        printf("i=%d j=%d\n", i, j);
+    }
+}
+// 总执行次数 = 3 × 2 = 6次</pre></div><div style="margin-top:10px;font-family:monospace;font-size:15px;background:white;padding:12px;border-radius:8px">i=1 j=1<br>i=1 j=2<br>i=2 j=1<br>i=2 j=2<br>i=3 j=1<br>i=3 j=2</div></div></div></div><div class="slide cs"><h2>📖 例4-6：打印九九乘法表</h2><div style="display:flex;gap:20px;width:100%">
+<div style="flex:1"><h3>💻 程序代码</h3><div class="cb" style="font-size:14px"><pre>main()
+{
+    int i, j;
+    for(i=1; i&lt;10; i++)
+        printf("%4d", i);
+    printf("\n");
+    for(i=1; i&lt;10; i++)      // 外层：行
+    {
+        for(j=1; j&lt;10; j++)  // 内层：列
+            printf("%4d", i*j);
+        printf("\n");        // 换行
+    }
+}</pre></div></div><div style="flex:1"><h3>📋 输出结果</h3><div style="font-family:Consolas,monospace;font-size:14px;background:white;padding:12px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1);line-height:1.8">   1   2   3   4   5   6   7   8   9<br>   2   4   6   8  10  12  14  16  18<br>   3   6   9  12  15  18  21  24  27<br>   4   8  12  16  20  24  28  32  36<br>   5  10  15  20  25  30  35  40  45<br>   6  12  18  24  30  36  42  48  54<br>   7  14  21  28  35  42  49  56  63<br>   8  16  24  32  40  48  56  64  72<br>   9  18  27  36  45  54  63  72  81</div></div></div></div><div class="slide cs"><h2>⚠️ 循环嵌套 —— 易错点</h2><div class="wb"><div class="t">🚨 错误1：内外层循环变量重名</div><div class="cb" style="margin:8px 0;font-size:15px"><pre>for(i=1; i&lt;=3; i++)
+{
+    for(i=1; i&lt;=5; i++)  // ← 内外都用i！冲突！
+        printf("*");
+}
+// ✅ 正确：内层用j、k等不同变量名</pre></div></div><div class="wb"><div class="t">🚨 错误2：混淆内外层执行次数</div><p style="font-size:16px">外层执行m次，内层执行n次，循环体总执行次数 = <strong>m × n</strong>。<br>考试常考：外层3次，内层4次，printf执行多少次？→ 12次！</p></div><div class="wb"><div class="t">🚨 错误3：忘记内层结束后要换行</div><p style="font-size:16px">打印多行图形时，内层循环负责打印一行，内层结束后必须printf("\n")换行。</p></div></div><div class="slide cs"><h2>✏️ 多重循环 —— 春考选择题（题目）</h2><div class="qq"><div class="qt">【第1题】printf语句执行的次数是（  ）</div><div class="cb" style="margin:6px 0;font-size:15px"><pre>for(i=1; i&lt;=4; i++)
+    for(j=1; j&lt;=3; j++)
+        printf("*");</pre></div><div class="op"><span>A. 7次</span><span>B. 12次</span><span>C. 3次</span><span>D. 4次</span></div></div><div class="qq"><div class="qt">【第2题】关于循环嵌套，下列说法正确的是（  ）</div><div class="op"><span>A. 只能for嵌套for</span><span>B. while不能嵌套for</span><span>C. 三种循环可以相互嵌套</span><span>D. 最多只能嵌套两层</span></div></div><div class="qq"><div class="qt">【第3题】外层循环执行一次，内层循环（  ）</div><div class="op"><span>A. 执行一次</span><span>B. 执行完整一轮</span><span>C. 不执行</span><span>D. 执行两次</span></div></div></div><div class="slide as"><h2 style="font-size:34px;color:#0f3460;margin-bottom:25px;width:100%;padding-bottom:12px;border-bottom:4px solid #2e7d32">✅ 多重循环 —— 选择题答案</h2><div class="ai"><strong>第1题：</strong><span class="c">B. 12次</span><br><span style="font-size:15px;color:#666">解析：外层4次 × 内层3次 = 12次。i=1时j跑1-3，i=2时j又跑1-3...以此类推。</span></div><div class="ai"><strong>第2题：</strong><span class="c">C. 三种循环可以相互嵌套</span><br><span style="font-size:15px;color:#666">解析：while、do...while、for三种循环可以任意嵌套，没有限制。for里可以套while，while里也可以套for。</span></div><div class="ai"><strong>第3题：</strong><span class="c">B. 执行完整一轮</span><br><span style="font-size:15px;color:#666">解析：外层循环每走一步，内层循环要从头到尾完整执行一遍。外层走一圈，内层跑一圈。</span></div></div><div class="slide cs"><h2>4.5.1 break 语句 —— 跳出整个循环</h2><div style="display:flex;gap:25px;width:100%">
+<div style="flex:1"><h3>📌 作用</h3><p style="font-size:17px;line-height:1.8">立即<strong>跳出当前整个循环</strong>，执行循环后面的语句。<br><br>就像跑步比赛中有人突然喊"停！"，所有人立刻停止。</p><h3 style="margin-top:12px">⚠️ 注意事项</h3><ul style="font-size:16px;line-height:1.8;margin-left:20px"><li>只能用在<strong>循环语句</strong>和<strong>switch语句</strong>中</li><li>嵌套循环中，break只跳出<strong>它所在的那一层</strong></li></ul></div><div style="flex:1"><h3>🔄 例4-7：体积超100就停止</h3><div class="cb" style="font-size:14px"><pre>for(r=1; r&lt;=10; r++)
+{
+    v = PI * r * r * h;
+    if(v &gt; 100.0)
+        break;  // 体积超了，跳出循环
+    printf("r=%d, v=%.2f\n", r, v);
+}
+printf("此时 r = %d\n", r);</pre></div><div style="margin-top:10px;background:white;padding:12px;border-radius:8px;font-family:monospace;font-size:15px">r=1, v=18.84<br>r=2, v=75.36<br><span class="d">// r=3时 v=169.56&gt;100 → break</span><br><span class="s">此时 r = 3</span></div></div></div></div><div class="slide cs"><h2>4.5.2 continue 语句 —— 跳过本次循环</h2><div style="display:flex;gap:25px;width:100%">
+<div style="flex:1"><h3>📌 作用</h3><p style="font-size:17px;line-height:1.8">跳过循环体中<strong>剩余的语句</strong>，直接进入<strong>下一轮循环</strong>。<br><br>就像跑步时某一圈有人说"这圈不算，下一圈重来"，但比赛还在继续。</p><h3 style="margin-top:12px">⚠️ 注意事项</h3><ul style="font-size:16px;line-height:1.8;margin-left:20px"><li>只能用在<strong>循环语句</strong>中</li><li>continue之后的循环体语句不执行</li><li>循环变量更新（表达式3）<strong>仍然会执行</strong></li></ul></div><div style="flex:1"><h3>🔄 例4-8：输出能被7整除的数</h3><div class="cb" style="font-size:15px"><pre>for(num=50; num&lt;=100; num++)
+{
+    if(num%7 != 0)
+        continue;  // 不能被7整除？跳过！
+    printf("%d\n", num);
+    // 只有能被7整除的才输出
+}</pre></div><div style="margin-top:10px;background:white;padding:12px;border-radius:8px;font-family:monospace;font-size:16px">输出：56 63 70 77 84 91 98</div></div></div></div><div class="slide cs"><h2>⚖️ break 与 continue 对比（春考必考点）</h2><table class="ct"><tr><th style="width:20%">对比项</th><th style="width:40%">break</th><th style="width:40%">continue</th></tr><tr><td><strong>作用范围</strong></td><td>整个循环</td><td>仅本次循环</td></tr><tr><td><strong>循环状态</strong></td><td class="d">彻底结束循环</td><td class="s">结束本轮，进入下一轮</td></tr><tr><td><strong>执行后</strong></td><td>跳到循环后面的语句</td><td>跳到循环条件判断</td></tr><tr><td><strong>用在switch中</strong></td><td class="s">可以</td><td class="d">不可以</td></tr></table><div style="display:flex;gap:15px;margin-top:12px"><div style="flex:1;padding:12px;background:#ffebee;border-radius:8px;font-size:16px;text-align:center"><strong class="d">🚪 break = 出口</strong><br>直接走出整个循环房间</div><div style="flex:1;padding:12px;background:#fff8e1;border-radius:8px;font-size:16px;text-align:center"><strong style="color:#f57c00">⏭️ continue = 跳过</strong><br>这一圈不跑了，开始下一圈</div></div></div><div class="slide cs"><h2>✏️ break/continue —— 春考选择题（题目）</h2><div class="qq"><div class="qt">【第1题】以下程序的输出结果是（  ）</div><div class="cb" style="margin:6px 0;font-size:15px"><pre>for(i=1; i&lt;=5; i++)
+{
+    if(i == 3) break;
+    printf("%d ", i);
+}</pre></div><div class="op"><span>A. 1 2 3 4 5</span><span>B. 1 2</span><span>C. 1 2 4 5</span><span>D. 1 2 3</span></div></div><div class="qq"><div class="qt">【第2题】以下程序的输出结果是（  ）</div><div class="cb" style="margin:6px 0;font-size:15px"><pre>for(i=1; i&lt;=5; i++)
+{
+    if(i == 3) continue;
+    printf("%d ", i);
+}</pre></div><div class="op"><span>A. 1 2 3 4 5</span><span>B. 1 2</span><span>C. 1 2 4 5</span><span>D. 1 2 3</span></div></div><div class="qq"><div class="qt">【第3题】continue语句的作用是（  ）</div><div class="op"><span>A. 结束整个循环</span><span>B. 结束本次循环，进入下一次</span><span>C. 跳出switch语句</span><span>D. 暂停程序</span></div></div></div><div class="slide as"><h2 style="font-size:34px;color:#0f3460;margin-bottom:25px;width:100%;padding-bottom:12px;border-bottom:4px solid #2e7d32">✅ break/continue —— 选择题答案</h2><div class="ai"><strong>第1题：</strong><span class="c">B. 1 2</span><br><span style="font-size:15px;color:#666">解析：i=1输出1，i=2输出2，i=3时遇到break直接跳出整个循环！所以3、4、5都不输出了。</span></div><div class="ai"><strong>第2题：</strong><span class="c">C. 1 2 4 5</span><br><span style="font-size:15px;color:#666">解析：i=1输出1，i=2输出2，i=3时遇到continue跳过printf（但i++还是执行了变成4），i=4输出4，i=5输出5。</span></div><div class="ai"><strong>第3题：</strong><span class="c">B. 结束本次循环，进入下一次</span><br><span style="font-size:15px;color:#666">解析：continue只结束本轮循环，跳过后面的语句，直接开始下一轮。注意continue不能用在switch中！</span></div></div><div class="slide cs"><h2>🏆 综合实例：判断素数（例4-9）</h2><div style="display:flex;gap:25px;width:100%">
+<div style="flex:1"><h3>📌 什么是素数？</h3><p style="font-size:16px;line-height:1.8">素数（质数）：大于1的自然数，除了1和它本身，不能被其他任何数整除。<br><br>例：2, 3, 5, 7, 11, 13... 是素数<br>4, 6, 8, 9, 10, 12... 不是素数</p><h3 style="margin-top:10px">💡 判断思路</h3><ul style="font-size:15px;line-height:1.8;margin-left:18px"><li>用2 ~ √num 之间的数去试除</li><li>有一个能整除 → 不是素数</li><li>都不能整除 → 是素数</li><li>用tag（标志变量）记录结果</li></ul></div><div style="flex:1"><h3>💻 核心代码</h3><div class="cb" style="font-size:14px"><pre>int num, j, tag=1, m;
+scanf("%d", &num);
+m = sqrt(num);  // 除到平方根即可
+for(j=2; j&lt;=m; j++)
+{
+    if(num % j == 0)
+    {
+        tag = 0;  // 能整除，不是素数
+        break;     // 找到了就不用再试
+    }
+}
+if(tag == 1)
+    printf("%d是素数", num);
+else
+    printf("%d不是素数", num);</pre></div></div></div></div><div class="slide cs"><h2>📝 本章小结</h2><div style="background:white;border-radius:10px;padding:25px;box-shadow:0 2px 10px rgba(0,0,0,.1);width:100%;font-size:18px;line-height:2.2">
+<strong style="color:#0f3460;font-size:20px">🎯 核心知识点：</strong><br>
+① 三种循环语句：while、do...while、for<br>
+② 循环三要素：赋初值、判条件、更改变量<br>
+③ do...while至少执行一次，while/for可能执行0次<br>
+④ 循环嵌套：外层走1次，内层跑1圈<br>
+⑤ break = 跳出整个循环；continue = 跳过本轮<br>
+⑥ 典型算法：累加、累乘、计数、素数、九九表
+</div><div style="margin-top:15px;padding:15px;background:#e3f2fd;border-radius:8px;font-size:16px;width:100%"><strong>🎯 春考高频考点：</strong><br>① 三种循环的区别（特别是do...while至少执行一次）<br>② break vs continue的区别<br>③ 读程序写结果（循环跟踪表）<br>④ 编程题：累加求和、素数判断、打印图形</div></div><div class="slide cover"><h1>感谢学习</h1><div class="sub">第4章 循环程序设计 · 完</div><div class="info"><p>💪 多写代码、多练例题，循环结构一定能掌握！</p><p style="margin-top:15px">📚 下一章预告：数组</p></div></div><div class="nc"><button class="nb" onclick="prevSlide()">← 上一页</button><button class="nb" onclick="nextSlide()">下一页 →</button></div><div class="pi" id="pi">1 / 30</div><script>let cur=0;const sl=document.querySelectorAll('.slide');const tot=sl.length;function show(n){sl.forEach(s=>s.classList.remove('active'));sl[n].classList.add('active');document.getElementById('pi').textContent=(n+1)+' / '+tot}function next(){if(cur<tot-1){cur++;show(cur)}}function prev(){if(cur>0){cur--;show(cur)}}document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();next()}else if(e.key==='ArrowLeft'){e.preventDefault();prev()}})</script></body></html>
