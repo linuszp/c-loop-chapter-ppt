@@ -1,0 +1,137 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>C语言循环程序设计 PPT 第二部分</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:"Microsoft YaHei",sans-serif;overflow:hidden}.slide{width:100vw;height:100vh;display:none;flex-direction:column;justify-content:center;align-items:center;padding:25px 45px;position:absolute;top:0;left:0;overflow-y:auto}.slide.active{display:flex}.cover{background:linear-gradient(135deg,#0f3460,#1a8a7e);color:white;text-align:center}.cover h1{font-size:48px;margin-bottom:20px}.cover .sub{font-size:24px;opacity:.9}.cover .info{font-size:18px;opacity:.7;margin-top:40px}.cs{background:#f8f9fa;color:#333}.cs h2{font-size:30px;color:#0f3460;margin-bottom:18px;padding-bottom:10px;border-bottom:4px solid #1a8a7e;width:100%}.cs h3{font-size:20px;color:#16537e;margin:10px 0}.cb{background:#1e1e2e;color:#e0e0e0;font-family:Consolas,monospace;font-size:14px;padding:12px;border-radius:8px;margin:8px 0;line-height:1.5;border-left:4px solid #1a8a7e}.wb{background:#fff3cd;border-left:5px solid #ffc107;padding:8px 12px;margin:5px 0;border-radius:0 8px 8px 0}.wb .t{font-weight:bold;color:#856404;font-size:15px;margin-bottom:4px}.qq{background:white;border-radius:10px;padding:12px;margin:6px 0;box-shadow:0 2px 8px rgba(0,0,0,.08);border-left:4px solid #16537e;width:100%}.qq .qt{font-size:15px;font-weight:bold;color:#0f3460;margin-bottom:5px}.qq .op{display:grid;grid-template-columns:1fr 1fr;gap:3px 15px;font-size:14px;color:#555}.as{background:linear-gradient(135deg,#e8f5e9,#c8e6c9)}.ai{background:white;border-radius:8px;padding:8px 12px;margin:5px 0;font-size:14px;box-shadow:0 2px 6px rgba(0,0,0,.1);width:100%}.ai .c{color:#2e7d32;font-weight:bold}.pb{background:#e3f2fd;border-left:5px solid #1976d2;padding:10px 15px;margin:6px 0;border-radius:0 8px 8px 0;width:100%}.pb .pt{font-weight:bold;color:#0d47a1;font-size:15px;margin-bottom:4px}.pb .pd{font-size:14px;line-height:1.6}.ct{width:100%;border-collapse:collapse;margin:8px 0;font-size:13px}.ct th{background:#16537e;color:white;padding:6px;text-align:left}.ct td{padding:5px 7px;border-bottom:1px solid #ddd}.nc{position:fixed;bottom:20px;right:30px;z-index:100;display:flex;gap:10px}.nb{background:rgba(15,52,96,.8);color:white;border:none;padding:10px 20px;border-radius:25px;cursor:pointer;font-size:14px}.nb:hover{background:#1a8a7e}.pi{position:fixed;bottom:25px;left:30px;color:#666;font-size:13px;z-index:100;background:rgba(255,255,255,.9);padding:5px 15px;border-radius:15px}.d{color:#d32f2f;font-weight:bold}.s{color:#2e7d32;font-weight:bold}.hl{background:#fff59d;padding:2px 6px;border-radius:3px;font-weight:bold}.tip{padding:8px 12px;border-radius:8px;font-size:13px;width:100%;margin-top:6px}.tip-blue{background:#e3f2fd}.tip-green{background:#e8f5e9}.tip-yellow{background:#fff3cd}.tip-red{background:#ffebee}.shape{font-family:monospace;font-size:16px;line-height:1.8;text-align:center}</style></head><body><div class="slide cover active"><h1>第二部分</h1><div class="sub">多重循环扩充 + break/continue + 综合实例 + 课后练习</div><div class="info"><p>第4章 循环程序设计 · 扩充版</p><p style="margin-top:8px">共25页 · 图形打印专题 + 20道选择 + 10道程序题</p></div></div><div class="slide cs"><h2>🔲 多重循环 —— 图形打印专题</h2><div style="display:flex;gap:20px;width:100%">
+<div style="flex:1"><h3>📌 打印矩形（4行5列星号）</h3><div class="cb"><pre>for(i=1; i&lt;=4; i++)  // 外层：行
+{
+    for(j=1; j&lt;=5; j++)  // 内层：列
+        printf("*");
+    printf("\n");  // 换行
+}</pre></div><div class="shape">*****</div></div><div style="flex:1"><h3>📌 打印直角三角形（4行）</h3><div class="cb"><pre>for(i=1; i&lt;=4; i++)  // 外层：行
+{
+    for(j=1; j&lt;=i; j++)  // 内层：列
+        printf("*");
+    printf("\n");
+}</pre></div><div class="shape">*<br>**<br>***<br>****</div></div></div></div><div class="slide cs"><h2>🔺 多重循环 —— 更多图形示例</h2><div style="display:flex;gap:15px;width:100%">
+<div style="flex:1"><h3>📌 倒三角形（4行）</h3><div class="cb" style="font-size:13px"><pre>for(i=4; i&gt;=1; i--)
+{
+    for(j=1; j&lt;=i; j++)
+        printf("*");
+    printf("\n");
+}</pre></div><div class="shape">****<br>***<br>**<br>*</div></div><div style="flex:1"><h3>📌 数字金字塔（4行）</h3><div class="cb" style="font-size:13px"><pre>for(i=1; i&lt;=4; i++)
+{
+    // 打印空格
+    for(j=1; j&lt;=4-i; j++)
+        printf(" ");
+    // 打印星号
+    for(j=1; j&lt;=2*i-1; j++)
+        printf("*");
+    printf("\n");
+}</pre></div><div class="shape">&nbsp;&nbsp;&nbsp;*<br>&nbsp;&nbsp;***<br>&nbsp;*****<br>*******</div></div></div></div><div class="slide cs"><h2>📊 嵌套循环执行过程演示（3×2矩阵）</h2><p style="font-size:15px;margin-bottom:10px">代码：外层i从1到3，内层j从1到2，输出i和j的值</p><table class="ct"><tr><th>外层轮次</th><th>内层轮次</th><th>i的值</th><th>j的值</th><th>输出内容</th><th>内层结束后</th></tr><tr><td rowspan="2">第1轮(i=1)</td><td>第1次</td><td>1</td><td>1</td><td>i=1,j=1</td><td>j++→2</td></tr><tr><td>第2次</td><td>1</td><td>2</td><td>i=1,j=2</td><td>j++→3，内层结束</td></tr><tr><td rowspan="2">第2轮(i=2)</td><td>第1次</td><td>2</td><td>1</td><td>i=2,j=1</td><td>j++→2</td></tr><tr><td>第2次</td><td>2</td><td>2</td><td>i=2,j=2</td><td>j++→3，内层结束</td></tr><tr><td rowspan="2">第3轮(i=3)</td><td>第1次</td><td>3</td><td>1</td><td>i=3,j=1</td><td>j++→2</td></tr><tr><td>第2次</td><td>3</td><td>2</td><td>i=3,j=2</td><td>j++→3，内层结束</td></tr><tr><td colspan="6" style="text-align:center;background:#e8f5e9"><strong>总输出次数 = 3 × 2 = 6次</strong></td></tr></table></div><div class="slide cs"><h2>⚠️ 多重循环 —— 6大易错点（扩充版）</h2><div class="wb"><div class="t">🚨 错误1：内外层循环变量重名</div><div class="cb" style="margin:3px 0;font-size:12px"><pre>for(i=1; i&lt;=3; i++)
+{
+    for(i=1; i&lt;=5; i++)  // ← 内外都用i！冲突！
+        printf("*");
+}</pre></div></div><div class="wb"><div class="t">🚨 错误2：混淆内外层执行次数</div><p style="font-size:13px">外层m次 × 内层n次 = 总执行m×n次。考试常考！</p></div><div class="wb"><div class="t">🚨 错误3：忘记内层结束后要换行</div><p style="font-size:13px">打印多行图形时，内层循环结束后必须printf("\n")换行。</p></div><div class="wb"><div class="t">🚨 错误4：内外循环变量混淆（边界条件）</div><p style="font-size:13px">打印三角形时，内层循环条件应该和外层变量i有关（如j&lt;=i），不要写死。</p></div><div class="wb"><div class="t">🚨 错误5：交叉嵌套（语法错误）</div><p style="font-size:13px">循环嵌套必须完整嵌套，不能交叉！外层开了内层没关又关外层，编译错误。</p></div><div class="wb"><div class="t">🚨 错误6：以为break能跳出所有层</div><p style="font-size:13px">嵌套循环中，break只能跳出它所在的那一层循环，外层循环还在继续！</p></div></div><div class="slide cs"><h2>✏️ 多重循环 —— 春考选择题（6道）</h2><div class="qq"><div class="qt">【第1题】printf语句执行的次数是（  ）</div><div class="cb" style="margin:3px 0;font-size:12px"><pre>for(i=1; i&lt;=4; i++)
+    for(j=1; j&lt;=3; j++)
+        printf("*");</pre></div><div class="op"><span>A. 7次</span><span>B. 12次</span><span>C. 3次</span><span>D. 4次</span></div></div><div class="qq"><div class="qt">【第2题】关于循环嵌套，下列说法正确的是（  ）</div><div class="op"><span>A. 只能for嵌套for</span><span>B. while不能嵌套for</span><span>C. 三种循环可以相互嵌套</span><span>D. 最多只能嵌套两层</span></div></div><div class="qq"><div class="qt">【第3题】外层循环执行一次，内层循环（  ）</div><div class="op"><span>A. 执行一次</span><span>B. 执行完整一轮</span><span>C. 不执行</span><span>D. 执行两次</span></div></div><div class="qq"><div class="qt">【第4题】以下程序输出的星号个数是（  ）</div><div class="cb" style="margin:3px 0;font-size:12px"><pre>for(i=1; i&lt;=3; i++)
+    for(j=1; j&lt;=i; j++)
+        printf("*");</pre></div><div class="op"><span>A. 3个</span><span>B. 6个</span><span>C. 9个</span><span>D. 5个</span></div></div><div class="qq"><div class="qt">【第5题】循环嵌套中，break语句的作用是（  ）</div><div class="op"><span>A. 跳出所有循环</span><span>B. 跳出当前所在层循环</span><span>C. 跳过本次循环</span><span>D. 没有作用</span></div></div><div class="qq"><div class="qt">【第6题】打印4行直角三角形，内层循环次数应该是（  ）</div><div class="op"><span>A. 固定4次</span><span>B. 随外层i变化</span><span>C. 固定10次</span><span>D. 不确定</span></div></div></div><div class="slide as"><h2 style="font-size:28px;color:#0f3460;margin-bottom:15px;width:100%;padding-bottom:8px;border-bottom:4px solid #2e7d32">✅ 多重循环 —— 选择题答案（6道）</h2><div class="ai"><strong>第1题：</strong><span class="c">B. 12次</span>　解析：外层4次 × 内层3次 = 12次</div><div class="ai"><strong>第2题：</strong><span class="c">C. 三种循环可以相互嵌套</span>　解析：while、do-while、for可以任意嵌套</div><div class="ai"><strong>第3题：</strong><span class="c">B. 执行完整一轮</span>　解析：外层走一步，内层跑完整一圈</div><div class="ai"><strong>第4题：</strong><span class="c">B. 6个</span>　解析：1+2+3=6个星号（第1行1个，第2行2个，第3行3个）</div><div class="ai"><strong>第5题：</strong><span class="c">B. 跳出当前所在层循环</span>　解析：break只跳出它所在的那一层</div><div class="ai"><strong>第6题：</strong><span class="c">B. 随外层i变化</span>　解析：第i行打印i个星号，内层循环次数=外层i的值</div></div><div class="slide cs"><h2>💻 多重循环 —— 编程练习题（5道梯度）</h2><div class="pb"><div class="pt">【基础题1】打印4行5列的星号矩形</div><div class="pd">要求：输出4行，每行5个星号。<br><span style="color:#666;font-size:12px">考点：双层循环基本结构</span></div></div><div class="pb"><div class="pt">【基础题2】打印4行直角三角形</div><div class="pd">要求：第1行1个星，第2行2个...第4行4个。<br><span style="color:#666;font-size:12px">考点：内层循环次数随外层变化</span></div></div><div class="pb"><div class="pt">【提高题3】打印倒三角形</div><div class="pd">要求：第1行5个星，第2行4个...第5行1个。<br><span style="color:#666;font-size:12px">考点：外层循环从大到小递减</span></div></div><div class="pb"><div class="pt">【春考难度4】打印数字金字塔（5行）</div><div class="pd">要求：居中对齐的金字塔，第1行1个星，第2行3个...第5行9个。<br><span style="color:#666;font-size:12px">考点：先打印空格，再打印星号</span></div></div><div class="pb"><div class="pt">【春考难度5】打印九九乘法表下三角</div><div class="pd">要求：只打印下三角（第i行打印i个式子）。<br><span style="color:#666;font-size:12px">考点：内层循环j从1到i</span></div></div></div><div class="slide cs"><h2>⚖️ break vs continue —— 对比示例（同一问题两种解法）</h2><h3>问题：输出1~10中能被3整除的数</h3><div style="display:flex;gap:15px;width:100%">
+<div style="flex:1"><h3 style="color:#d32f2f">用break实现？</h3><div class="cb" style="font-size:12px"><pre>// 不适合！break是跳出整个循环
+// 不能用来筛选数据
+for(i=1; i&lt;=10; i++)
+{
+    if(i%3 == 0)
+        printf("%d ", i);
+    // break用在这里就全完了
+}</pre></div><p style="font-size:13px;color:#d32f2f">❌ break是"全退"，不适合筛选</p></div><div style="flex:1"><h3 style="color:#2e7d32">用continue实现</h3><div class="cb" style="font-size:12px"><pre>for(i=1; i&lt;=10; i++)
+{
+    if(i%3 != 0)
+        continue;  // 不能整除？跳过！
+    printf("%d ", i);
+    // 只有能整除的才输出
+}</pre></div><p style="font-size:13px;color:#2e7d32">✅ continue是"半退"，适合筛选数据</p></div></div></div><div class="slide cs"><h2>⚠️ break/continue —— 6大易错点（扩充版）</h2><div class="wb"><div class="t">🚨 错误1：混淆break和continue的作用</div><p style="font-size:13px">break = 全退（跳出整个循环），continue = 半退（跳过本轮）。考试必考！</p></div><div class="wb"><div class="t">🚨 错误2：误以为continue后循环变量不更新</div><p style="font-size:13px">for中遇到continue，表达式3（i++）仍然会执行！<br>例：for(i=1;i&lt;=5;i++){ if(i==3) continue; printf("%d",i); }<br>输出：1 2 4 5（i=3跳过printf，但i++变成4了）</p></div><div class="wb"><div class="t">🚨 错误3：嵌套循环中break只跳一层</div><p style="font-size:13px">break只能跳出它所在的那一层循环，外层循环还在继续！</p></div><div class="wb"><div class="t">🚨 错误4：continue用在switch里</div><p style="font-size:13px">continue只能用在循环语句中，不能用在switch语句里！switch里用break。</p></div><div class="wb"><div class="t">🚨 错误5：以为break后循环变量还会更新</div><p style="font-size:13px">遇到break时，循环立即结束！后面的变量更新、循环体剩余语句都不执行了。</p></div><div class="wb"><div class="t">🚨 错误6：把break当成continue用</div><p style="font-size:13px">筛选数据时应该用continue（跳过不符合条件的），用了break就直接结束循环了，结果完全不对。</p></div></div><div class="slide cs"><h2>✏️ break/continue —— 春考选择题（6道）</h2><div class="qq"><div class="qt">【第1题】以下程序的输出结果是（  ）</div><div class="cb" style="margin:3px 0;font-size:12px"><pre>for(i=1; i&lt;=5; i++)
+{
+    if(i == 3) break;
+    printf("%d ", i);
+}</pre></div><div class="op"><span>A. 1 2 3 4 5</span><span>B. 1 2</span><span>C. 1 2 4 5</span><span>D. 1 2 3</span></div></div><div class="qq"><div class="qt">【第2题】以下程序的输出结果是（  ）</div><div class="cb" style="margin:3px 0;font-size:12px"><pre>for(i=1; i&lt;=5; i++)
+{
+    if(i == 3) continue;
+    printf("%d ", i);
+}</pre></div><div class="op"><span>A. 1 2 3 4 5</span><span>B. 1 2</span><span>C. 1 2 4 5</span><span>D. 1 2 3</span></div></div><div class="qq"><div class="qt">【第3题】continue语句的作用是（  ）</div><div class="op"><span>A. 结束整个循环</span><span>B. 结束本次循环，进入下一次</span><span>C. 跳出switch语句</span><span>D. 暂停程序</span></div></div><div class="qq"><div class="qt">【第4题】以下程序的输出结果是（  ）</div><div class="cb" style="margin:3px 0;font-size:12px"><pre>int i, s=0;
+for(i=1; i&lt;=10; i++)
+{
+    if(i%2 == 0) continue;
+    s += i;
+}
+printf("%d", s);</pre></div><div class="op"><span>A. 55</span><span>B. 25</span><span>C. 30</span><span>D. 20</span></div></div><div class="qq"><div class="qt">【第5题】关于break语句，下列说法错误的是（  ）</div><div class="op"><span>A. 可以用在循环语句中</span><span>B. 可以用在switch语句中</span><span>C. 可以单独用在if语句中</span><span>D. 嵌套循环中只跳出当前层</span></div></div><div class="qq"><div class="qt">【第6题】以下程序运行结束后，s的值是（  ）</div><div class="cb" style="margin:3px 0;font-size:12px"><pre>int i, s=0;
+for(i=1; i&lt;=10; i++)
+{
+    if(i &gt; 5) break;
+    s += i;
+}</pre></div><div class="op"><span>A. 15</span><span>B. 55</span><span>C. 10</span><span>D. 5</span></div></div></div><div class="slide as"><h2 style="font-size:28px;color:#0f3460;margin-bottom:15px;width:100%;padding-bottom:8px;border-bottom:4px solid #2e7d32">✅ break/continue —— 选择题答案（6道）</h2><div class="ai"><strong>第1题：</strong><span class="c">B. 1 2</span>　解析：i=3时遇到break直接跳出整个循环，所以3、4、5都不输出</div><div class="ai"><strong>第2题：</strong><span class="c">C. 1 2 4 5</span>　解析：i=3时遇到continue跳过printf，但i++还是执行了变成4</div><div class="ai"><strong>第3题：</strong><span class="c">B. 结束本次循环，进入下一次</span>　解析：continue只结束本轮循环，直接开始下一轮</div><div class="ai"><strong>第4题：</strong><span class="c">B. 25</span>　解析：continue跳过偶数，只累加奇数。1+3+5+7+9=25</div><div class="ai"><strong>第5题：</strong><span class="c">C. 可以单独用在if语句中</span>　解析：break不能单独用在if中！if里的break是跳出外层循环或switch</div><div class="ai"><strong>第6题：</strong><span class="c">A. 15</span>　解析：i=1到5时累加s=1+2+3+4+5=15，i=6时i&gt;5为真，break跳出循环</div></div><div class="slide cs"><h2>🏆 综合实例1：素数判断（详细分步讲解）</h2><div style="display:flex;gap:15px;width:100%">
+<div style="flex:1"><h3>📌 算法分析</h3><p style="font-size:13px;line-height:1.8">素数：大于1，除了1和它本身不能被其他数整除。<br><br><strong>判断思路：</strong><br>1. 用2到√n之间的数去试除<br>2. 如果有一个能整除 → 不是素数<br>3. 如果都不能整除 → 是素数<br>4. 用tag（标志变量）记录结果</p></div><div style="flex:1"><h3>💻 完整代码</h3><div class="cb" style="font-size:12px"><pre>#include &lt;math.h&gt;
+main()
+{
+    int num, j, tag=1, m;
+    printf("输入一个数：");
+    scanf("%d", &num);
+    m = sqrt(num);
+    for(j=2; j&lt;=m; j++)
+    {
+        if(num % j == 0)
+        {
+            tag = 0;
+            break;
+        }
+    }
+    if(tag == 1)
+        printf("%d是素数", num);
+    else
+        printf("%d不是素数", num);
+}</pre></div></div></div></div><div class="slide cs"><h2>🏆 综合实例2：百钱百鸡问题</h2><div style="display:flex;gap:15px;width:100%">
+<div style="flex:1"><h3>📌 问题描述</h3><p style="font-size:13px;line-height:1.8">公鸡5元一只，母鸡3元一只，小鸡3只一元。<br>用100元买100只鸡，问公鸡、母鸡、小鸡各买多少只？</p><h3 style="margin-top:8px">💡 分析</h3><p style="font-size:13px;line-height:1.7">设公鸡x只，母鸡y只，小鸡z只<br>方程1：x + y + z = 100<br>方程2：5x + 3y + z/3 = 100<br>用穷举法，双层循环遍历所有可能。</p></div><div style="flex:1"><h3>💻 代码实现</h3><div class="cb" style="font-size:11px"><pre>main()
+{
+    int x, y, z;
+    for(x=0; x&lt;=20; x++)  // 公鸡最多20只
+    {
+        for(y=0; y&lt;=33; y++)  // 母鸡最多33只
+        {
+            z = 100 - x - y;
+            if(z%3==0 && 5*x+3*y+z/3==100)
+                printf("公鸡=%d 母鸡=%d 小鸡=%d\n", x, y, z);
+        }
+    }
+}</pre></div><div class="tip tip-green" style="font-size:12px">输出4组解：(0,25,75) (4,18,78) (8,11,81) (12,4,84)</div></div></div></div><div class="slide cs"><h2>📝 课后练习：选择题1-10</h2><div class="qq"><div class="qt">1. C语言中，能直接跳出整个循环的语句是（  ）</div><div class="op"><span>A. continue</span><span>B. break</span><span>C. goto</span><span>D. return</span></div></div><div class="qq"><div class="qt">2. for循环中，必须存在的是（  ）</div><div class="op"><span>A. 表达式1</span><span>B. 表达式2</span><span>C. 表达式3</span><span>D. 分号</span></div></div><div class="qq"><div class="qt">3. do...while循环结束时，while后面必须有（  ）</div><div class="op"><span>A. 逗号</span><span>B. 分号</span><span>C. 句号</span><span>D. 不需要</span></div></div><div class="qq"><div class="qt">4. 循环嵌套中，外层2次内层3次，循环体执行（  ）次</div><div class="op"><span>A. 5</span><span>B. 6</span><span>C. 3</span><span>D. 2</span></div></div><div class="qq"><div class="qt">5. 累加求和时，累加器sum的初始值应该是（  ）</div><div class="op"><span>A. 0</span><span>B. 1</span><span>C. 随机值</span><span>D. 100</span></div></div><div class="qq"><div class="qt">6. 下列循环中，至少执行一次循环体的是（  ）</div><div class="op"><span>A. while</span><span>B. for</span><span>C. do...while</span><span>D. 都不是</span></div></div><div class="qq"><div class="qt">7. 判断素数时，试除到哪个数即可（  ）</div><div class="op"><span>A. n-1</span><span>B. n/2</span><span>C. √n</span><span>D. n</span></div></div><div class="qq"><div class="qt">8. for(i=0; i&lt;5; i++)循环执行的次数是（  ）</div><div class="op"><span>A. 4次</span><span>B. 5次</span><span>C. 6次</span><span>D. 不确定</span></div></div><div class="qq"><div class="qt">9. continue语句的作用是（  ）</div><div class="op"><span>A. 结束整个循环</span><span>B. 跳过本次循环剩余语句</span><span>C. 跳出switch</span><span>D. 暂停程序</span></div></div><div class="qq"><div class="qt">10. 打印4行直角三角形，内层循环次数是（  ）</div><div class="op"><span>A. 固定4次</span><span>B. 随外层i变化</span><span>C. 固定10次</span><span>D. 不确定</span></div></div></div><div class="slide as"><h2 style="font-size:28px;color:#0f3460;margin-bottom:12px;width:100%;padding-bottom:8px;border-bottom:4px solid #2e7d32">✅ 课后练习：选择题答案（1-10）</h2><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;width:100%">
+<div class="ai"><strong>1.</strong> <span class="c">B. break</span></div>
+<div class="ai"><strong>2.</strong> <span class="c">D. 分号</span></div>
+<div class="ai"><strong>3.</strong> <span class="c">B. 分号</span></div>
+<div class="ai"><strong>4.</strong> <span class="c">B. 6</span></div>
+<div class="ai"><strong>5.</strong> <span class="c">A. 0</span></div>
+<div class="ai"><strong>6.</strong> <span class="c">C. do...while</span></div>
+<div class="ai"><strong>7.</strong> <span class="c">C. √n</span></div>
+<div class="ai"><strong>8.</strong> <span class="c">B. 5次</span></div>
+<div class="ai"><strong>9.</strong> <span class="c">B. 跳过本次循环剩余语句</span></div>
+<div class="ai"><strong>10.</strong> <span class="c">B. 随外层i变化</span></div>
+</div></div><div class="slide cs"><h2>📝 课后练习：选择题11-20</h2><div class="qq"><div class="qt">11. while循环中的循环体（  ）</div><div class="op"><span>A. 至少执行一次</span><span>B. 可能执行0次</span><span>C. 固定执行n次</span><span>D. 最多一次</span></div></div><div class="qq"><div class="qt">12. for循环中，表达式1执行的次数是（  ）</div><div class="op"><span>A. 每次循环都执行</span><span>B. 只执行一次</span><span>C. 一次都不执行</span><span>D. 不确定</span></div></div><div class="qq"><div class="qt">13. 以下程序运行结果是（  ）</div><div class="cb" style="margin:3px 0;font-size:12px"><pre>int i, s=0;
+for(i=1; i&lt;=3; i++)
+    s += i;
+printf("%d", s);</pre></div><div class="op"><span>A. 3</span><span>B. 6</span><span>C. 5</span><span>D. 死循环</span></div></div><div class="qq"><div class="qt">14. 以下程序输出的星号个数是（  ）</div><div class="cb" style="margin:3px 0;font-size:12px"><pre>for(i=1; i&lt;=3; i++)
+    for(j=1; j&lt;=i; j++)
+        printf("*");</pre></div><div class="op"><span>A. 3个</span><span>B. 6个</span><span>C. 9个</span><span>D. 5个</span></div></div><div class="qq"><div class="qt">15. 以下程序运行结果是（  ）</div><div class="cb" style="margin:3px 0;font-size:12px"><pre>int i, s=0;
+for(i=1; i&lt;=10; i++)
+{
+    if(i%2 == 0) continue;
+    s += i;
+}
+printf("%d", s);</pre></div><div class="op"><span>A. 55</span><span>B. 25</span><span>C. 30</span><span>D. 20</span></div></div><div class="qq"><div class="qt">16. do...while循环的特点是（  ）</div><div class="op"><span>A. 先判断后执行</span><span>B. 至少执行一次</span><span>C. 循环体可能执行0次</span><span>D. 和while一样</span></div></div><div class="qq"><div class="qt">17. 求1~100的和，正确的循环条件是（  ）</div><div class="op"><span>A. i&lt;100</span><span>B. i&lt;=100</span><span>C. i&gt;100</span><span>D. i=100</span></div></div><div class="qq"><div class="qt">18. 以下程序运行结果是（  ）</div><div class="cb" style="margin:3px 0;font-size:12px"><pre>int i=1, s=0;
+while(i&lt;3)
+    i++;
+printf("%d", i);</pre></div><div class="op"><span>A. 1</span><span>B. 2</span><span>C. 3</span><span>D. 死循环</span></div></div><div class="qq"><div class="qt">19. 关于循环嵌套，下列说法正确的是（  ）</div><div class="op"><span>A. 只能for嵌套for</span><span>B. 三种循环可以相互嵌套</span><span>C. 最多嵌套两层</span><span>D. while不能嵌套for</span></div></div><div class="qq"><div class="qt">20. 累乘求阶乘时，累乘器t的初始值应该是（  ）</div><div class="op"><span>A. 0</span><span>B. 1</span><span>C. 随机值</span><span>D. 10</span></div></div></div><div class="slide as"><h2 style="font-size:28px;color:#0f3460;margin-bottom:12px;width:100%;padding-bottom:8px;border-bottom:4px solid #2e7d32">✅ 课后练习：选择题答案（11-20）</h2><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;width:100%">
+<div class="ai"><strong>11.</strong> <span class="c">B. 可能执行0次</span></div>
+<div class="ai"><strong>12.</strong> <span class="c">B. 只执行一次</span></div>
+<div class="ai"><strong>13.</strong> <span class="c">B. 6</span></div>
+<div class="ai"><strong>14.</strong> <span class="c">B. 6个</span></div>
+<div class="ai"><strong>15.</strong> <span class="c">B. 25</span></div>
+<div class="ai"><strong>16.</strong> <span class="c">B. 至少执行一次</span></div>
+<div class="ai"><strong>17.</strong> <span class="c">B. i&lt;=100</span></div>
+<div class="ai"><strong>18.</strong> <span class="c">C. 3</span></div>
+<div class="ai"><strong>19.</strong> <span class="c">B. 三种循环可以相互嵌套</span></div>
+<div class="ai"><strong>20.</strong> <span class="c">B. 1</span></div>
+</div></div><div class="slide cs"><h2>💻 课后练习：程序题（10道，附思路）</h2><div class="pb"><div class="pt">【1】求1+2+3+...+100的和</div><div class="pd"><strong>思路：</strong>循环累加，sum=0，i从1到100，sum+=i。考点：循环基本用法</div></div><div class="pb"><div class="pt">【2】求1~100的偶数和</div><div class="pd"><strong>思路：</strong>for(i=2;i&lt;=100;i+=2) sum+=i。考点：步长为2的循环</div></div><div class="pb"><div class="pt">【3】求n的阶乘 n!</div><div class="pd"><strong>思路：</strong>t=1，i从1到n，t*=i。考点：累乘，初始值为1</div></div><div class="pb"><div class="pt">【4】统计1~100中能被3整除的数的个数</div><div class="pd"><strong>思路：</strong>count=0，循环判断i%3==0则count++。考点：计数器用法</div></div><div class="pb"><div class="pt">【5】输出100~200之间所有能被7整除的数</div><div class="pd"><strong>思路：</strong>for循环从100到200，判断i%7==0则输出。考点：循环+条件判断</div></div><div class="pb"><div class="pt">【6】输入一个数，判断是否为素数</div><div class="pd"><strong>思路：</strong>用2到√n试除，tag标志变量。考点：素数算法+break</div></div><div class="pb"><div class="pt">【7】打印4行5列星号矩形</div><div class="pd"><strong>思路：</strong>双层循环，外层行内层列，内层结束后换行。考点：循环嵌套基本结构</div></div><div class="pb"><div class="pt">【8】打印4行直角三角形</div><div class="pd"><strong>思路：</strong>外层i从1到4，内层j从1到i。考点：内层循环次数随外层变化</div></div><div class="pb"><div class="pt">【9】打印九九乘法表</div><div class="pd"><strong>思路：</strong>双层循环，外层i行，内层j列，输出i*j。考点：嵌套循环+格式化输出</div></div><div class="pb"><div class="pt">【10】求1!+2!+...+10!的和</div><div class="pd"><strong>思路：</strong>外层循环算阶乘，内层循环累加。考点：嵌套循环+累加累乘综合</div></div></div><div class="slide cover"><h1>第二部分 · 完</h1><div class="sub">返回第一部分继续学习 → index.html</div><div class="info"><p>💪 多加练习，循环结构一定能掌握！</p></div></div><div class="nc"><button class="nb" onclick="prevSlide()">← 上一页</button><button class="nb" onclick="nextSlide()">下一页 →</button></div><div class="pi" id="pi">1 / 26</div><script>let cur=0;const sl=document.querySelectorAll('.slide');const tot=sl.length;function show(n){sl.forEach(s=>s.classList.remove('active'));sl[n].classList.add('active');document.getElementById('pi').textContent=(n+1)+' / '+tot}function next(){if(cur<tot-1){cur++;show(cur)}}function prev(){if(cur>0){cur--;show(cur)}}document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();next()}else if(e.key==='ArrowLeft'){e.preventDefault();prev()}})</script></body></html>
